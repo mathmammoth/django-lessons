@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import joints
 
-# Create your views here.
+def dude_coming(request):
+    join = joints.objects.all()
+    return render(request, 'main/index.html', {'join': join})
